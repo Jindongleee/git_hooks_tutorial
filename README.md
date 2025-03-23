@@ -8,12 +8,12 @@
 
    본인은 대체적으로 commit 내용을 Gitmoji를 사용하기 때문에 Gitmoji가 아닌 경우 에러 메시지 출력이 가능하게 설정함
    [.git/hooks/commit-msg]
-   # 커밋 메시지가 :star: 처럼 이모지로 시작하는지 검사 (이모지는 :"String": 형태)
+   커밋 메시지가 :star: 처럼 이모지로 시작하는지 검사 (이모지는 :"String": 형태)
 
-   # 커밋 메시지 파일의 내용을 읽음
+   커밋 메시지 파일의 내용을 읽음
    COMMIT_MSG=$(cat $1)
     
-   # 깃 이모지 패턴 확인 (여기서는 :sparkles:, :bug:, :memo:, :fire: 등을 예로 사용)
+   깃 이모지 패턴 확인 (여기서는 :sparkles:, :bug:, :memo:, :fire: 등을 예로 사용)
    if ! echo "$COMMIT_MSG" | grep -qE "^\:[a-zA-Z0-9\-]+\:"; then
       echo "Error: Commit message must start with a Gitmoji (e.g. :sparkles:, :bug:, :memo:, :fire:)"
       exit 1
